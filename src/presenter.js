@@ -1,15 +1,15 @@
 import sumar from "./sumador";
+import conversor from "./conversor"
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const decimal = document.querySelector("#decimal");
+const form = document.querySelector("#form-conversor");
+const div = document.querySelector("#div-resultado");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const numero = Number.parseInt(decimal.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p>" + numero + " ==> " + conversor(numero) + "</p>";
+  form.reset();
 });
